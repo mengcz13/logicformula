@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Online Logic Formula Solver</title>
+<title>命题公式在线分析器</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>Input the logic formula!</h1>
-<form method="GET" action="/search">
+
+<div class="jumbotron" style="text-align:center;color:white;background-image: url(https://assets.lullabot.com/1413474840_matrix-wallpapers.jpg);background-repeat:repeat">
+<h1>输入您想分析的命题公式吧!</h1> 
+<p>您会得到其逆波兰表达式,真值表</p> 
+</div>
+
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<form class="form" role="form" method="GET" action="/search">
+  <div class="form-group">
+  	<label for="formula">请输入命题公式:</label>
+    <input type="text" class="form-control" name="q" placeholder="输入命题公式,原子命题必须为英文字母或数字,合取词&,析取词|,否定词~,蕴涵词->,双条件词<->,允许使用括号" id="formula"></input>
+  </div>
+  <button type="submit" class="btn btn-primary">开始分析</button>
+</form>
+</div>
+</div>
+</div>
+
+<!-- <form method="GET" action="/search">
 	<input type="text" name="q"></input>
 	<input type="submit"></input>
-</form>
+</form> -->
 </body>
 </html>
