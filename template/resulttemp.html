@@ -10,6 +10,26 @@
 </head>
 
 <body>
+
+<div class="jumbotron" style="text-align:center;color:white;background-image: url(https://assets.lullabot.com/1413474840_matrix-wallpapers.jpg);background-repeat:repeat">
+<h1>输入您想分析的命题公式吧!</h1> 
+<p>您会得到其逆波兰表达式,真值表</p> 
+</div>
+
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<form class="form" role="form" method="GET" action="/search">
+  <div class="form-group">
+  	<label for="formula">请输入命题公式:</label>
+    <input type="text" class="form-control" name="q" placeholder="输入命题公式,原子命题必须为英文字母或数字,合取词&,析取词|,否定词~,蕴涵词->,双条件词<->,允许使用括号" id="formula"></input>
+  </div>
+  <button type="submit" class="btn btn-primary">开始分析</button>
+</form>
+</div>
+</div>
+</div>
+
 <p><a href="/static/homepage.html">Return</a></p>
 
 <h2>Reverse Poland Expression:</h2>
