@@ -30,8 +30,18 @@
 </div>
 </div>
 
-<!-- <p><a href="/static/homepage.html">Return</a></p> -->
 <br></br>
+<div class="row">
+<div class="col-sm-3"></div>
+<div class="col-sm-6">
+<div class="panel panel-default">
+  <div class="panel-heading">原公式</div>
+  <div class="panel-body">{{origin_formula}}</div>
+</div>
+</div>
+</div>
+
+<br>
 <div class="row">
 <div class="col-sm-3"></div>
 <div class="col-sm-6">
@@ -41,7 +51,7 @@
 </div>
 </div>
 </div>
-<br></br>
+<br>
 
 <div class="row">
 <div class="col-sm-3"></div>
@@ -65,6 +75,44 @@
   </tr>
   {%endfor%}
 
+  </table>
+  </div>
+</div>
+</div>
+</div>
+<br>
+
+<div class="row">
+<div class="col-sm-3"></div>
+<div class="col-sm-6">
+<div class="panel panel-default">
+  <div class="panel-heading">极小项</div>
+  <div class="panel-body">
+  <table class="table table-bordered">
+  <tr>
+  {%for name in true_list%}
+  <td>{{name}}</td>
+  {%endfor%}
+  </tr>
+  </table>
+  </div>
+</div>
+</div>
+</div>
+<br>
+
+<div class="row">
+<div class="col-sm-3"></div>
+<div class="col-sm-6">
+<div class="panel panel-default">
+  <div class="panel-heading">极大项</div>
+  <div class="panel-body">
+  <table class="table table-bordered">
+  <tr>
+  {%for name in false_list%}
+  <td>{{name}}</td>
+  {%endfor%}
+  </tr>
   </table>
   </div>
 </div>

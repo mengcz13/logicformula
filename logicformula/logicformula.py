@@ -9,6 +9,7 @@ def getres(request):
 	f=os.popen(cp+'/logic_formula \"'+logicf+'\"')
 	res=f.readlines()
 	resdict={}
+	resdict['origin_formula']=logicf
 	resdict['reverse_poland']=res[0].strip()
 	resdict['argnum']=int(res[1].strip())
 	resdict['arglist']=res[2].strip().split('\t')
