@@ -5,17 +5,18 @@ cp=os.path.dirname(os.path.abspath(__file__))
 
 def getres(request):
 	logicf=request.GET['q']
-	# tmp=subprocess.call([cp+'/logic_formula \"'+logicf+'\"'],shell=True)
 	f=os.popen(cp+'/logic_formula \"'+logicf+'\"')
-	#f=open(os.path.dirname(cp)+'/output.txt')
 	res=f.readlines()
+	resdict={}
+	resdict['reverse_poland']=res[0].strip()
+	resdict['argnum']=int(res(1).strip())
+	resdict['arglist']=res[2].strip().split('\t')
+	resdict['value_table']=[]
+	for i in range(0,1<<resdict['argnum']):
+		row=res[3+i].strip().split('\t')
+		resdict['value_table'].append(row)
+	resdict['true_list']=res[-2].strip().split('\t')
+	resdict['false_list']=res[-1].strip().split('\t')
 	f.close()
-	text='<html><body><p>%s</p></body></html>'%(res)
-	return HttpResponse(text)
 
-if (__name__=='__main__'):
-	logicf='\"a%c|e\"'
-	subprocess.call([cp+'/logic_formula '+logicf],shell=True)
-	f=open(cp+'/output.txt')
-	res=f.read()
-	print res
+	return HttpResponse(resdict)
