@@ -30,29 +30,46 @@
 </div>
 </div>
 
-<p><a href="/static/homepage.html">Return</a></p>
+<!-- <p><a href="/static/homepage.html">Return</a></p> -->
+<br></br>
+<div class="row">
+<div class="col-sm-3"></div>
+<div class="col-sm-6">
+<div class="panel panel-default">
+  <div class="panel-heading">逆波兰表达式</div>
+  <div class="panel-body">{{reverse_poland}}</div>
+</div>
+</div>
+</div>
+<br></br>
 
-<h2>Reverse Poland Expression:</h2>
-<p>{{reverse_poland}}</p>
+<div class="row">
+<div class="col-sm-3"></div>
+<div class="col-sm-6">
+<div class="panel panel-default">
+  <div class="panel-heading">真值表</div>
+  <div class="panel-body">
+  <table class="table table-bordered">
+  <tr>
+  {%for name in arglist%}
+  <td>{{name}}</td>
+  {%endfor%}
+  <td>Expression Value</td>
+  </tr>
 
-<h2>Value Table:</h2>
-<table style="width:100%">
-<tr>
-{%for name in arglist%}
-<td>{{name}}</td>
-{%endfor%}
-<td>Expression Value</td>
-</tr>
+  {%for row in value_table%}
+  <tr>
+  {%for v in row%}
+  <td>{{v}}</td>
+  {%endfor%}
+  </tr>
+  {%endfor%}
 
-{%for row in value_table%}
-<tr>
-{%for v in row%}
-<td>{{v}}</td>
-{%endfor%}
-</tr>
-{%endfor%}
-
-</table>
+  </table>
+  </div>
+</div>
+</div>
+</div>
 
 </body>
 </html>
