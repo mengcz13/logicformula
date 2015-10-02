@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.shortcuts import render_to_response
 import os
 import subprocess
 cp=os.path.dirname(os.path.abspath(__file__))
@@ -9,7 +10,7 @@ def getres(request):
 	res=f.readlines()
 	resdict={}
 	resdict['reverse_poland']=res[0].strip()
-	resdict['argnum']=int(res(1).strip())
+	resdict['argnum']=int(res[1].strip())
 	resdict['arglist']=res[2].strip().split('\t')
 	resdict['value_table']=[]
 	for i in range(0,1<<resdict['argnum']):
@@ -19,4 +20,4 @@ def getres(request):
 	resdict['false_list']=res[-1].strip().split('\t')
 	f.close()
 
-	return HttpResponse(resdict)
+	return render_to_response('resulttemp.html',resdict)

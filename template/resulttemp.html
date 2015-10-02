@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Result</title>
+</head>
+<body>
+<p><a href="/static/homepage.html">Return</a></p>
+
+<h2>Reverse Poland Expression:</h2>
+<p>{{reverse_poland}}</p>
+
+<h2>Value Table:</h2>
+<table style="width:100%">
+<tr>
+{%for name in arglist%}
+<td>{{name}}</td>
+{%endfor%}
+<td>Expression Value</td>
+</tr>
+
+{%for row in value_table%}
+<tr>
+{%for v in row%}
+<td>{{v}}</td>
+{%endfor%}
+</tr>
+{%endfor%}
+
+</table>
+
+</body>
+</html>
